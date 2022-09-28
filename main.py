@@ -3,16 +3,16 @@ import requests
 from twilio.rest import Client
 import os
 
-lat = 12.750756
-lon = 80.198574
+lat = YOUR LATITUDE
+lon = YOUR LONGITUDE
 
 
-api_key = "d144866f1a693508ba5c18566b6a0c03"
+api_key = YOUR OPEN WEATHER API KEY
 api_ep = f"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={api_key}"
 
 
-twilio_id = "AC1db8ff9313987a8cd30ca98b0d42edc4"
-token = "0fd86924f672b622be73d1ce4249d8d7"
+twilio_id = YOUR TWILIO ID
+token = YOUR TWILIO TOKEN
 
 parameters = {
     "cnt" : 4
@@ -48,7 +48,7 @@ client = Client(twilio_id, token)
 
 message = client.messages.create(
     body= msg,
-    from_= +19289637127,
-    to= +916379564694
+    from_= YOUR TWILIO NUMBER,
+    to= MOBILE NUMBER TO REPORT
 )
 print(message.sid)
